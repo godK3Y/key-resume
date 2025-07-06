@@ -5,7 +5,7 @@ import { ExternalLink, Github, ArrowUpRight } from "lucide-react";
 import { skills, skillCategories } from "./data/skills";
 import { projects } from "./data/projects";
 import { useEffect, useRef, useState } from "react";
-
+import { ThemeToggle } from "./theme-toggle";
 function MainContent() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
     new Set()
@@ -39,6 +39,9 @@ function MainContent() {
     <main className="p-8 lg:p-12 space-y-24 max-h-screen overflow-y-auto">
       {/* Hero Section */}
       <section className="pt-12 pb-8">
+        <div className="flex justify-end animate-fade-in-up">
+          <ThemeToggle />
+        </div>
         <div className="max-w-4xl">
           <h2 className="text-5xl lg:text-7xl font-light text-gray-900 dark:text-gray-100 leading-tight mb-8 animate-fade-in-up transition-colors duration-300">
             Creating digital

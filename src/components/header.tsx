@@ -2,25 +2,18 @@
 
 import { Github, Mail, Linkedin } from "lucide-react";
 import { Card } from "./ui/card";
-import { ThemeToggle } from "./theme-toggle";
 
 function Header() {
   return (
     <header className="p-8 lg:p-12 h-full flex items-center animate-slide-in-left">
       <Card className="w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-0 shadow-2xl shadow-black/5 dark:shadow-white/5 p-10 lg:p-12 rounded-3xl transition-colors duration-300">
-        <div className="space-y-8">
-          {/* Theme Toggle */}
-          <div className="flex justify-end animate-fade-in-up">
-            <ThemeToggle />
-          </div>
-
+        <div className="animate-fade-in-up">
           {/* Profile Image */}
-          <div className="animate-fade-in-up">
-            <div className="w-20 h-20 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
-              <span className="text-2xl font-light text-gray-600 dark:text-gray-300">
-                IS
-              </span>
-            </div>
+          <div className="w-50 h-20 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
+            <span className="text-2xl font-light text-gray-600 dark:text-gray-300">
+              key ingkarat
+            </span>
+            <div className="flex justify-end animate-fade-in-up"></div>
           </div>
 
           {/* Name */}
