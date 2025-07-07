@@ -6,15 +6,15 @@ import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
 import { useEffect, useState } from "react";
 import Image from "next/image";
 
+const navigationItems = [
+  { id: "about", label: "About", href: "#about" },
+  { id: "skills", label: "Skills", href: "#skills" },
+  { id: "projects", label: "Projects", href: "#projects" },
+  { id: "contact", label: "Contact", href: "#contact" },
+];
+
 function Header() {
   const [activeTab, setActiveTab] = useState("about");
-
-  const navigationItems = [
-    { id: "about", label: "About", href: "#about" },
-    { id: "skills", label: "Skills", href: "#skills" },
-    { id: "projects", label: "Projects", href: "#projects" },
-    { id: "contact", label: "Contact", href: "#contact" },
-  ];
 
   // Handle smooth scrolling when tab is clicked
   const handleTabClick = (tabId: string) => {
