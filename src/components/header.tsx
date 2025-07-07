@@ -2,14 +2,56 @@
 
 import { Github, Mail, Linkedin } from "lucide-react";
 import { Card } from "./ui/card";
+import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
+import { useEffect, useState } from "react";
 
 function Header() {
+  const [activeTab, setActiveTab] = useState("about");
+
+  const navigationItems = [
+    { id: "about", label: "About", href: "#about" },
+    { id: "skills", label: "Skills", href: "#skills" },
+    { id: "projects", label: "Projects", href: "#projects" },
+    { id: "contact", label: "Contact", href: "#contact" },
+  ];
+
+  // Handle smooth scrolling when tab is clicked
+  const handleTabClick = (tabId: string) => {
+    setActiveTab(tabId);
+    const element = document.getElementById(tabId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+  // Update active tab based on scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navigationItems.map((item) => ({
+        id: item.id,
+        element: document.getElementById(item.id),
+      }));
+
+      const currentSection = sections.find((section) => {
+        if (!section.element) return false;
+        const rect = section.element.getBoundingClientRect();
+        return rect.top <= 100 && rect.bottom >= 100;
+      });
+
+      if (currentSection) {
+        setActiveTab(currentSection.id);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <header className="p-8 lg:p-12 h-full flex items-center animate-slide-in-left">
-      <Card className="w-full bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl border-0 shadow-2xl shadow-black/5 dark:shadow-white/5 p-10 lg:p-12 rounded-3xl transition-colors duration-300">
+      <Card className="w-full bg-card/90 backdrop-blur-xl border-0 shadow-2xl shadow-black/5 dark:shadow-white/5 p-10 lg:p-12 rounded-3xl transition-colors duration-300">
         <div className="animate-fade-in-up">
           {/* Profile Image */}
-          <div className="w-50 h-20 bg-gradient-to-br from-gray-100 to-gray-200 dark:from-gray-700 dark:to-gray-800 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
+          <div className="w-50 h-20 bg-gradient-to-br from-muted to-muted/80 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
             <span className="text-2xl font-light text-gray-600 dark:text-gray-300">
               key ingkarat
             </span>
@@ -38,28 +80,29 @@ function Header() {
           </div>
 
           {/* Navigation */}
-          <nav className="animate-fade-in-up animate-delay-200">
-            <ul className="space-y-4">
-              {[
-                { href: "#about", label: "About" },
-                { href: "#skills", label: "Skills" },
-                { href: "#projects", label: "Projects" },
-                { href: "#contact", label: "Contact" },
-              ].map((item) => (
-                <li key={item.href}>
-                  <a
-                    href={item.href}
-                    className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 transition-all duration-300 text-base font-light tracking-wide hover:translate-x-2 inline-block group"
+          <div className="animate-fade-in-up animate-delay-200">
+            <Tabs
+              value={activeTab}
+              onValueChange={handleTabClick}
+              orientation="vertical"
+              className="w-full"
+            >
+              <TabsList className="grid w-full grid-cols-1 h-auto bg-transparent p-0 space-y-2">
+                {navigationItems.map((item) => (
+                  <TabsTrigger
+                    key={item.id}
+                    value={item.id}
+                    className="w-full justify-start text-left px-4 py-3 bg-transparent border-0 shadow-none data-[state=active]:bg-accent data-[state=active]:text-accent-foreground text-muted-foreground hover:text-foreground hover:bg-accent/60 transition-all duration-300 rounded-xl font-light text-base tracking-wide group relative overflow-hidden"
                   >
-                    <span className="group-hover:opacity-100 opacity-0 transition-opacity duration-300 mr-2">
-                      →
+                    <span className="relative z-10 group-hover:translate-x-1 transition-transform duration-300">
+                      {item.label}
                     </span>
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </nav>
+                    <div className="absolute inset-0 bg-accent/30 opacity-0 group-hover:opacity-100 group-data-[state=active]:opacity-100 transition-opacity duration-300" />
+                  </TabsTrigger>
+                ))}
+              </TabsList>
+            </Tabs>
+          </div>
 
           {/* Contact */}
           <div className="space-y-6 animate-fade-in-up animate-delay-300">

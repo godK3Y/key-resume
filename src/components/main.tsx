@@ -6,6 +6,7 @@ import { skills, skillCategories } from "./data/skills";
 import { projects } from "./data/projects";
 import { useEffect, useRef, useState } from "react";
 import { ThemeToggle } from "./theme-toggle";
+import Image from "next/image";
 function MainContent() {
   const [visibleSections, setVisibleSections] = useState<Set<string>>(
     new Set()
@@ -87,7 +88,7 @@ function MainContent() {
               </p>
             </div>
           </div>
-          <div className="bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-800 dark:to-gray-900 rounded-3xl p-8 lg:p-10 transition-colors duration-300">
+          <div className="bg-gradient-to-br from-muted to-muted/80 rounded-3xl p-8 lg:p-10 transition-colors duration-300">
             <h4 className="text-lg font-medium text-gray-900 dark:text-gray-100 mb-6 transition-colors duration-300">
               Currently
             </h4>
@@ -144,7 +145,7 @@ function MainContent() {
                       return (
                         <div
                           key={skill.id}
-                          className={`group flex items-center gap-4 p-6 bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-2xl border border-gray-100 dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-white/5 transition-all duration-300 hover:-translate-y-2 ${
+                          className={`group flex items-center gap-4 p-6 bg-card/80 backdrop-blur-sm rounded-2xl border border-border hover:border-border/80 hover:shadow-xl hover:shadow-black/5 dark:hover:shadow-white/5 transition-all duration-300 hover:-translate-y-2 ${
                             visibleSections.has("skills")
                               ? "animate-fade-in-up"
                               : "opacity-0"
@@ -201,17 +202,19 @@ function MainContent() {
                 }`}
                 style={{ animationDelay: `${index * 200}ms` }}
               >
-                <div className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-gray-100 dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 hover:shadow-2xl hover:shadow-black/5 dark:hover:shadow-white/5 transition-all duration-500 hover:-translate-y-4">
+                <div className="bg-card/60 backdrop-blur-xl rounded-3xl overflow-hidden border border-border hover:border-border/80 hover:shadow-2xl hover:shadow-black/5 dark:hover:shadow-white/5 transition-all duration-500 hover:-translate-y-4">
                   <div className="lg:flex">
                     <div className="lg:w-3/5 relative overflow-hidden">
-                      <img
+                      <Image
                         src={project.image || "/placeholder.svg"}
                         alt={project.title}
-                        className="w-full h-64 lg:h-80 object-cover transition-transform duration-700 group-hover:scale-105"
+                        width={500}
+                        height={500}
+                        className="w-full h-70 lg:h-full object-cover transition-transform duration-700 group-hover:scale-105"
                       />
                       {project.featured && (
                         <div className="absolute top-6 left-6">
-                          <Badge className="bg-white/90 dark:bg-gray-800/90 text-gray-700 dark:text-gray-300 text-xs font-light border-0 shadow-sm px-3 py-1 transition-colors duration-300">
+                          <Badge className="bg-card/90 text-card-foreground text-xs font-light border-0 shadow-sm px-3 py-1 transition-colors duration-300">
                             FEATURED
                           </Badge>
                         </div>
@@ -233,7 +236,7 @@ function MainContent() {
                             <Badge
                               key={tech}
                               variant="outline"
-                              className="text-xs border-gray-200 dark:border-gray-600 text-gray-600 dark:text-gray-300 font-light bg-white/50 dark:bg-gray-800/50 hover:bg-white/80 dark:hover:bg-gray-800/80 transition-colors duration-300 px-3 py-1"
+                              className="text-xs border-border text-muted-foreground font-light bg-card/50 hover:bg-card/80 transition-colors duration-300 px-3 py-1"
                             >
                               {tech}
                             </Badge>
@@ -244,7 +247,7 @@ function MainContent() {
                           <Button
                             size="sm"
                             variant="outline"
-                            className="border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl font-light transition-all duration-300 hover:-translate-y-1 group/btn"
+                            className="border-border text-foreground hover:bg-accent bg-card/50 backdrop-blur-sm rounded-xl font-light transition-all duration-300 hover:-translate-y-1 group/btn"
                             asChild
                           >
                             <a
@@ -259,7 +262,7 @@ function MainContent() {
                           <Button
                             size="sm"
                             variant="outline"
-                            className="border-gray-200 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl font-light transition-all duration-300 hover:-translate-y-1"
+                            className="border-border text-foreground hover:bg-accent bg-card/50 backdrop-blur-sm rounded-xl font-light transition-all duration-300 hover:-translate-y-1"
                             asChild
                           >
                             <a
@@ -304,7 +307,7 @@ function MainContent() {
           </p>
           <Button
             size="lg"
-            className="bg-gray-900 dark:bg-gray-100 hover:bg-gray-800 dark:hover:bg-gray-200 text-white dark:text-gray-900 font-light px-8 py-4 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+            className="bg-primary hover:bg-primary/90 text-primary-foreground font-light px-8 py-4 rounded-2xl transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
             asChild
           >
             <a href="mailto:ingkarat.sitt@gmail.com">Get in touch</a>

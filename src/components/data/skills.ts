@@ -2,31 +2,21 @@ import { IconType } from "react-icons";
 import {
   FaReact,
   FaNodeJs,
-  FaPython,
+  // FaPython,
   FaGitAlt,
-  FaDocker,
-  FaAws,
+  // FaDocker,
+  // FaAws,
   FaFigma,
   FaHtml5,
   FaCss3Alt,
   FaJs,
-  FaVuejs,
 } from "react-icons/fa";
 import {
   SiNextdotjs,
   SiTypescript,
-  SiFramer,
-  SiThreedotjs,
-  SiGreensock,
-  SiWebgl,
-  SiSass,
-  SiPostgresql,
   SiMongodb,
-  SiExpress,
-  SiPrisma,
-  SiGraphql,
+  // SiExpress,
   SiVercel,
-  SiBlender,
 } from "react-icons/si";
 
 export interface Skill {
@@ -129,12 +119,12 @@ export const skills: Skill[] = [
     category: "backend",
     icon: FaNodeJs,
   },
-  {
-    id: "14",
-    name: "Python",
-    category: "backend",
-    icon: FaPython,
-  },
+  // {
+  //   id: "14",
+  //   name: "Python",
+  //   category: "backend",
+  //   icon: FaPython,
+  // },
   // {
   //   id: "15",
   //   name: "PostgreSQL",
@@ -147,12 +137,12 @@ export const skills: Skill[] = [
     category: "backend",
     icon: SiMongodb,
   },
-  {
-    id: "17",
-    name: "Express.js",
-    category: "backend",
-    icon: SiExpress,
-  },
+  // {
+  //   id: "17",
+  //   name: "Express.js",
+  //   category: "backend",
+  //   icon: SiExpress,
+  // },
   // {
   //   id: "18",
   //   name: "Prisma",
@@ -179,18 +169,18 @@ export const skills: Skill[] = [
     category: "tools",
     icon: FaGitAlt,
   },
-  {
-    id: "22",
-    name: "DOCKER",
-    category: "tools",
-    icon: FaDocker,
-  },
-  {
-    id: "23",
-    name: "AWS",
-    category: "tools",
-    icon: FaAws,
-  },
+  // {
+  //   id: "22",
+  //   name: "DOCKER",
+  //   category: "tools",
+  //   icon: FaDocker,
+  // },
+  // {
+  //   id: "23",
+  //   name: "AWS",
+  //   category: "tools",
+  //   icon: FaAws,
+  // },
   {
     id: "24",
     name: "VERCEL",
