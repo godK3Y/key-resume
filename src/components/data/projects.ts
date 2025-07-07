@@ -28,7 +28,7 @@ export const projects: Project[] = [
       "AN EXPERIMENTAL ADMIN DASHBOARD WITH SCROLL-BASED STORYTELLING AND MICRO-INTERACTIONS THAT RESPOND TO USER BEHAVIOR.",
     techStack: ["NEXT.JS", "TYPESCRIPT", "TAILWIND"],
     image: "/img/resume.png",
-    liveUrl: "https://example.com",
+    liveUrl: "https://key-resume.vercel.app/",
     repoUrl: "https://github.com/johndoe/kinetic-dashboard",
     featured: true,
   },
