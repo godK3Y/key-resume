@@ -1,9 +1,10 @@
 "use client";
 
-import { Github, Mail, Linkedin } from "lucide-react";
+import { Github, Mail, Instagram, Facebook } from "lucide-react";
 import { Card } from "./ui/card";
 import { Tabs, TabsList, TabsTrigger } from "./ui/tabs";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 function Header() {
   const [activeTab, setActiveTab] = useState("about");
@@ -51,32 +52,45 @@ function Header() {
       <Card className="w-full bg-card/90 backdrop-blur-xl border-0 shadow-2xl shadow-black/5 dark:shadow-white/5 p-10 lg:p-12 rounded-3xl transition-colors duration-300">
         <div className="animate-fade-in-up">
           {/* Profile Image */}
-          <div className="w-50 h-20 bg-gradient-to-br from-muted to-muted/80 rounded-2xl flex items-center justify-center mb-6 transition-colors duration-300">
-            <span className="text-2xl font-light text-gray-600 dark:text-gray-300">
-              key ingkarat
-            </span>
-            <div className="flex justify-end animate-fade-in-up"></div>
+          <div className="w-35 h-auto p-3 bg-gradient-to-br from-muted to-muted/80 rounded-2xl flex items-center justify-start mb-6 transition-colors duration-300">
+            <Image
+              src="/img/pro1.jpg"
+              alt="ingkarat"
+              width={120}
+              height={120}
+              className="rounded-xl shadow-md"
+            />
           </div>
 
           {/* Name */}
           <div className="animate-fade-in-up">
-            <h1 className="text-3xl lg:text-4xl font-light text-gray-900 dark:text-gray-100 tracking-tight leading-tight mb-2 transition-colors duration-300">
+            <h1 className="text-3xl lg:text-4xl font-semibold text-primary dark:text-primary-foreground tracking-tight leading-tight mb-2 transition-colors duration-300">
               Ingkarat
               <br />
-              <span className="font-normal">Sittichokchai</span>
+              <span className="font-semibold">Sittichokchai</span>
             </h1>
             <p className="text-gray-500 dark:text-gray-400 text-lg font-light transition-colors duration-300">
-              Software Engineer
+              Frontend Developer
             </p>
+            <div className="w-full h-auto p-4 mt-3 bg-gradient-to-br from-muted to-muted/80 rounded-2xl flex flex-col gap-1 mb-6 transition-colors duration-300">
+              <h2 className="text-secondary text-lg font-semibold mb-1 transition-colors duration-300">
+                Internship
+                <span className="mx-2 text-muted-foreground font-normal">
+                  ——
+                </span>
+              </h2>
+              <p className="text-muted-foreground text-sm font-medium mb-0.5 transition-colors duration-300">
+                SCG (Thungsong) · Nov 2024 – Mar 2025
+              </p>
+              <p className="text-muted-foreground text-sm font-light transition-colors duration-300">
+                Front-end Developer / UX/UI
+              </p>
+            </div>
           </div>
 
           {/* Bio */}
-          <div className="animate-fade-in-up animate-delay-100">
-            <p className="text-gray-600 dark:text-gray-300 text-base font-light leading-relaxed transition-colors duration-300">
-              Passionate about creating beautiful, functional digital
-              experiences. I specialize in full-stack development with a focus
-              on modern web technologies.
-            </p>
+          <div className="animate-fade-in-up animate-delay-100 mb-8">
+            <p className="text-gray-600 dark:text-gray-300 text-base font-light leading-relaxed transition-colors duration-300"></p>
           </div>
 
           {/* Navigation */}
@@ -116,14 +130,19 @@ function Header() {
                   label: "GitHub",
                 },
                 {
-                  href: "https://linkedin.com/in/ingkarat",
-                  icon: Linkedin,
-                  label: "LinkedIn",
+                  href: "https://www.instagram.com/key_ingg/",
+                  icon: Instagram,
+                  label: "Instagram",
                 },
                 {
                   href: "mailto:ingkarat.sitt@gmail.com",
                   icon: Mail,
                   label: "Email",
+                },
+                {
+                  href: "https://www.facebook.com/ingkarat.sittichokchai",
+                  icon: Facebook,
+                  label: "Facebook",
                 },
               ].map((social) => {
                 const IconComponent = social.icon;
@@ -148,7 +167,7 @@ function Header() {
                 +66 93-154-1499
               </a>
               <p className="text-sm text-gray-400 dark:text-gray-500 font-light transition-colors duration-300">
-                Bangkok, Thailand
+                Thailand
               </p>
             </div>
           </div>

@@ -44,16 +44,20 @@ function MainContent() {
           <ThemeToggle />
         </div>
         <div className="max-w-4xl">
-          <h2 className="text-5xl lg:text-7xl font-light text-gray-900 dark:text-gray-100 leading-tight mb-8 animate-fade-in-up transition-colors duration-300">
-            Creating digital
+          <h2 className="text-4xl lg:text-5xl font-stretch-50% font-semibold text-secondary leading-tight mb-8 animate-fade-in-up transition-colors duration-300">
+            Frontend Developer
             <br />
-            <span className="text-gray-500 dark:text-gray-400">
-              experiences
+            <span className="text-muted-foreground">
+              {" "}
+              Creating digital experiences
             </span>
           </h2>
           <p className="text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-2xl animate-fade-in-up animate-delay-100 transition-colors duration-300">
-            I&apos;m a software engineer focused on building exceptional digital
-            products that combine beautiful design with powerful functionality.
+            Computer Science graduate passionate about frontend development and
+            eager to grow into a{" "}
+            <span className="text-amber-500">full-stack</span> role. While still
+            gaining experience, I bring a strong work ethic, a willingness to
+            learn, and a mindset focused on continuous improvement and teamwork.
           </p>
         </div>
       </section>
@@ -70,21 +74,16 @@ function MainContent() {
       >
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
-            <h3 className="text-3xl font-light text-gray-900 dark:text-gray-100 mb-6 transition-colors duration-300">
+            <h3 className="text-3xl font-stretch-50% font-semibold text-secondary mb-6 transition-colors duration-300">
               About
             </h3>
             <div className="space-y-6 text-gray-600 dark:text-gray-300 leading-relaxed font-light text-lg transition-colors duration-300">
               <p>
-                I&apos;m passionate about the intersection of design and
-                technology. My journey began with curiosity about how things
-                work and evolved into a love for creating digital solutions that
-                make a difference.
-              </p>
-              <p>
-                I specialize in full-stack development with expertise in modern
-                JavaScript frameworks, cloud technologies, and user experience
-                design. I believe great software is built through collaboration,
-                iteration, and attention to detail.
+                I’ve worked on both internship and personal projects, applying
+                technologies like React, Next.js, TailwindCSS, and NestJS. I
+                believe in learning by doing, staying consistent, and
+                collaborating with others to build software that’s clean,
+                functional, and user-friendly.
               </p>
             </div>
           </div>
@@ -101,11 +100,10 @@ function MainContent() {
               </div>
               <div className="flex items-center gap-3">
                 <div className="w-2 h-2 bg-blue-400 rounded-full"></div>
-                <span className="font-light">Learning AI/ML technologies</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <div className="w-2 h-2 bg-purple-400 rounded-full"></div>
-                <span className="font-light">Contributing to open source</span>
+                <span className="font-normal">
+                  Actively learning{" "}
+                  <span className="text-amber-500">full-stack</span> development
+                </span>
               </div>
             </div>
           </div>
@@ -123,7 +121,7 @@ function MainContent() {
         }`}
       >
         <div className="space-y-12">
-          <h3 className="text-3xl font-light text-gray-900 dark:text-gray-100 transition-colors duration-300">
+          <h3 className="text-3xl font-stretch-50% font-semibold text-secondary transition-colors duration-300">
             Skills & Technologies
           </h3>
 
@@ -134,7 +132,7 @@ function MainContent() {
               );
               return (
                 <div key={category.id} className="space-y-8">
-                  <h4 className="text-sm font-medium text-gray-400 dark:text-gray-500 uppercase tracking-widest transition-colors duration-300">
+                  <h4 className="text-sm font-stretch-50% font-semibold text-secondary uppercase tracking-widest transition-colors duration-300">
                     {category.name}
                   </h4>
                   <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
@@ -179,15 +177,22 @@ function MainContent() {
       >
         <div className="space-y-12">
           <div className="flex items-center justify-between">
-            <h3 className="text-3xl font-light text-gray-900 dark:text-gray-100 transition-colors duration-300">
+            <h3 className="text-3xl font-stretch-50% font-semibold text-secondary transition-colors duration-300">
               Selected Work
             </h3>
             <Button
               variant="ghost"
               className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-gray-100 font-light group transition-colors duration-300"
+              asChild
             >
-              View all projects
-              <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+              <a
+                href="https://github.com/godK3Y"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View all projects
+                <ArrowUpRight className="w-4 h-4 ml-2 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+              </a>
             </Button>
           </div>
 
@@ -214,7 +219,7 @@ function MainContent() {
                       />
                       {project.featured && (
                         <div className="absolute top-6 left-6">
-                          <Badge className="bg-card/90 text-card-foreground text-xs font-light border-0 shadow-sm px-3 py-1 transition-colors duration-300">
+                          <Badge className="bg-secondary text-secondary-foreground text-xs font-light border-0 shadow-sm px-3 py-1 transition-colors duration-300">
                             FEATURED
                           </Badge>
                         </div>
@@ -223,7 +228,7 @@ function MainContent() {
                     <div className="lg:w-2/5 p-8 lg:p-12 flex flex-col justify-center">
                       <div className="space-y-6">
                         <div>
-                          <h4 className="text-2xl font-light text-gray-900 dark:text-gray-100 mb-4 group-hover:text-gray-700 dark:group-hover:text-gray-300 transition-colors duration-300">
+                          <h4 className="text-2xl font-stretch-50% font-semibold text-secondary mb-4 group-hover:text-secondary transition-colors duration-300">
                             {project.title}
                           </h4>
                           <p className="text-gray-600 dark:text-gray-300 leading-relaxed font-light text-base transition-colors duration-300">
@@ -236,7 +241,7 @@ function MainContent() {
                             <Badge
                               key={tech}
                               variant="outline"
-                              className="text-xs border-border text-muted-foreground font-light bg-card/50 hover:bg-card/80 transition-colors duration-300 px-3 py-1"
+                              className="text-xs border-secondary text-secondary font-light bg-secondary/20 hover:bg-secondary/40 transition-colors duration-300 px-3 py-1"
                             >
                               {tech}
                             </Badge>
@@ -296,10 +301,10 @@ function MainContent() {
         }`}
       >
         <div className="text-center space-y-8">
-          <h3 className="text-4xl lg:text-5xl font-light text-gray-900 dark:text-gray-100 leading-tight transition-colors duration-300">
+          <h3 className="text-4xl lg:text-5xl font-stretch-50% font-semibold text-secondary leading-tight transition-colors duration-300">
             Let&apos;s work
             <br />
-            <span className="text-gray-500 dark:text-gray-400">together</span>
+            <span className="text-muted-foreground">together</span>
           </h3>
           <p className="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors duration-300">
             I&apos;m always interested in new opportunities and collaborations.

@@ -23,11 +23,11 @@ export const projects: Project[] = [
   },
   {
     id: "2",
-    title: "KINETIC DASHBOARD",
+    title: "ingkarat's portfolio",
     description:
       "AN EXPERIMENTAL ADMIN DASHBOARD WITH SCROLL-BASED STORYTELLING AND MICRO-INTERACTIONS THAT RESPOND TO USER BEHAVIOR.",
-    techStack: ["REACT", "GSAP", "D3.JS", "NODE.JS"],
-    image: "/placeholder.svg?height=400&width=600",
+    techStack: ["NEXT.JS", "TYPESCRIPT", "TAILWIND"],
+    image: "/img/resume.png",
     liveUrl: "https://example.com",
     repoUrl: "https://github.com/johndoe/kinetic-dashboard",
     featured: true,

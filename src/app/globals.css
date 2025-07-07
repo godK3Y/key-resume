@@ -50,22 +50,23 @@
   --background: oklch(0.98 0.005 100); /* เกือบขาว */
   --foreground: oklch(0.2 0.01 250); /* เทาเข้มนุ่ม */
 
-  --card: oklch(1 0 0); /* ขาว */
+  --card: oklch(0.95 0.002 100); /* ขาว */
   --card-foreground: oklch(0.2 0.01 250);
 
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.2 0.01 250);
 
   /* Primary Accent - iOS Blue */
-  --primary: oklch(0.7 0.15 250); /* น้ำเงินอมม่วง */
+  --primary: oklch(0.6 0.1 270.8); /* น้ำเงินอมม่วง */
   --primary-foreground: oklch(1 0 0);
 
   /* Secondary – Light grey */
-  --secondary: oklch(0.93 0.005 100);
+  --secondary: oklch(0.6 0.1 270.8);
+  /* --secondary: oklch(0.93 0.005 100); */
   --secondary-foreground: oklch(0.3 0.01 250);
 
   /* Muted – very soft grey */
-  --muted: oklch(0.95 0.002 100);
+  --muted: oklch(0.87 0.002 100);
   --muted-foreground: oklch(0.5 0.01 250);
 
   /* Accent – soft blue */
@@ -100,39 +101,39 @@
 }
 
 .dark {
-  --background: oklch(0.23 0.01 259.3); /* #272829 */
-  --foreground: oklch(0.84 0.01 250); /* #D8D9DA */
+  --background: oklch(0.23 0.01 259.3); /* เทาเข้มอมม่วง (เกือบดำ #272829) */
+  --foreground: oklch(0.84 0.01 250); /* เทาอ่อน (Almost White #D8D9DA) */
 
-  --primary: oklch(0.48 0.04 282.5); /* #61677A */
-  --primary-foreground: oklch(0.96 0.04 104.3); /* #FFF6E0 */
+  --primary: oklch(0.48 0.04 282.5); /* เทาน้ำเงินหม่น (#61677A) */
+  --primary-foreground: oklch(0.96 0.04 104.3); /* ครีมอ่อน (#FFF6E0) */
 
-  --secondary: oklch(0.96 0.04 104.3); /* #FFF6E0 */
-  --secondary-foreground: oklch(0.23 0.01 259.3); /* background */
+  --secondary: oklch(0.96 0.04 104.3); /* ครีมอ่อน (#FFF6E0) */
+  --secondary-foreground: oklch(0.23 0.01 259.3); /* เทาเข้มอมม่วง */
 
-  --accent: oklch(0.48 0.04 282.5);
-  --accent-foreground: oklch(0.96 0.04 104.3);
+  --accent: oklch(0.48 0.04 282.5); /* เทาน้ำเงินหม่น */
+  --accent-foreground: oklch(0.96 0.04 104.3); /* ครีมอ่อน */
 
-  --muted: oklch(0.34 0.01 259.3);
-  --muted-foreground: oklch(0.67 0.02 250);
+  --muted: oklch(0.34 0.01 259.3); /* เทาเข้มระดับกลาง */
+  --muted-foreground: oklch(0.67 0.02 250); /* เทาอ่อนอมฟ้า */
 
-  --border: oklch(0.84 0.01 250 / 10%);
-  --input: oklch(0.84 0.01 250 / 15%);
-  --ring: oklch(0.48 0.04 282.5);
+  --border: oklch(0.84 0.01 250 / 10%); /* ขอบบางสีเทาอ่อน */
+  --input: oklch(0.84 0.01 250 / 15%); /* ช่องใส่ข้อมูลเทาอ่อน */
+  --ring: oklch(0.48 0.04 282.5); /* สีวงแหวนเน้น */
 
-  --card: oklch(0.27 0.01 259.3);
-  --card-foreground: oklch(0.84 0.01 250);
+  --card: oklch(0.27 0.01 259.3); /* เทาเข้ม (ใกล้พื้นหลัง) */
+  --card-foreground: oklch(0.84 0.01 250); /* ข้อความสีเทาอ่อน */
 
-  --popover: oklch(0.27 0.01 259.3);
-  --popover-foreground: oklch(0.84 0.01 250);
+  --popover: oklch(0.27 0.01 259.3); /* เทาเข้ม */
+  --popover-foreground: oklch(0.84 0.01 250); /* ข้อความสีเทาอ่อน */
 
-  --sidebar: oklch(0.27 0.01 259.3);
-  --sidebar-foreground: oklch(0.84 0.01 250);
-  --sidebar-border: oklch(0.84 0.01 250 / 10%);
-  --sidebar-ring: oklch(0.48 0.04 282.5);
-  --sidebar-primary: oklch(0.48 0.04 282.5);
-  --sidebar-primary-foreground: oklch(0.96 0.04 104.3);
-  --sidebar-accent: oklch(0.96 0.04 104.3);
-  --sidebar-accent-foreground: oklch(0.23 0.01 259.3);
+  --sidebar: oklch(0.27 0.01 259.3); /* เทาเข้ม */
+  --sidebar-foreground: oklch(0.84 0.01 250); /* เทาอ่อน */
+  --sidebar-border: oklch(0.84 0.01 250 / 10%); /* ขอบ sidebar */
+  --sidebar-ring: oklch(0.48 0.04 282.5); /* สีเน้น */
+  --sidebar-primary: oklch(0.48 0.04 282.5); /* ปุ่ม/ลิงก์หลัก */
+  --sidebar-primary-foreground: oklch(0.96 0.04 104.3); /* ครีมอ่อน */
+  --sidebar-accent: oklch(0.96 0.04 104.3); /* ครีมอ่อน */
+  --sidebar-accent-foreground: oklch(0.23 0.01 259.3); /* เทาเข้ม */
 }
 
 @layer base {
